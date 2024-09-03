@@ -21,6 +21,7 @@ class Organization(models.Model):
     name = models.CharField(max_length=60)
     address = models.CharField(max_length=60, blank=True, null=True)
     user = models.ManyToManyField(User)
+    usertype = models.ForeignKey(UserType, on_delete=models.CASCADE, blank=True, null=True)
 
     class Meta:
         db_table = 'organization'

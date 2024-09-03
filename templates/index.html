@@ -24,6 +24,13 @@
                     <li class="list-group-item"><a href="{% url 'organizations' %}">Organizations</a></li>
                     <li class="list-group-item">User Types</li>
                     <li class="list-group-item">Users</li>
+                    <li class="list-group-item">
+                        <form action="{% url 'logout' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="next">
+                            <input type="submit" value="logout">
+                        </form>
+                    </li>
                 </ul>
             </div>
             <div class="col-md-9">
